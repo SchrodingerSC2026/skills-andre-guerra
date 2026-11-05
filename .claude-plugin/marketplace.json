@@ -1,0 +1,16 @@
+{
+  "name": "skills-andre-guerra",
+  "owner": {
+    "name": "André Guerra"
+  },
+  "metadata": {
+    "description": "Skills do Claude Code mantidas por André Guerra; cada uma lê o ambiente onde roda."
+  },
+  "plugins": [
+    {
+      "name": "review",
+      "source": "./plugins/review",
+      "description": "Revisões de entregável financeiro (planilha, premissas, e-mail e PDF), com a versão /review:go que revisa e já corrige."
+    }
+  ]
+}

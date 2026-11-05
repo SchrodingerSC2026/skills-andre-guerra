@@ -1,0 +1,19 @@
+# Catálogo de armadilhas da /review:financial
+
+Cada linha é um erro de raciocínio financeiro que já aconteceu. O revisor procura todas em toda
+revisão, além das cinco perguntas. Linha nova entra quando o usuário confirma um Erro ("corrige" ou
+"é erro"): chave, armadilha e como detectar, sem nome de projeto, planilha ou valor. O catálogo registra **como detectar**,
+nunca qual convenção é a certa.
+
+| Chave | Armadilha | Como detectar |
+|---|---|---|
+| `bruto_no_lugar_do_liquido` | O valor usado não é o que o rótulo diz: bruto lido como líquido, ou o inverso | Para cada coluna de recebimento, abrir o campo de origem no código e comparar com o dicionário da base (`MEMORIA.md`): o campo lido bate com o rótulo da coluna? |
+| `sobra_nao_abate_outro` | Resultado de carteira ou portfólio calculado unidade a unidade: a sobra de um acordo ou caso não paga o custo do outro | Se a coluna fala de carteira ou portfólio, o código agrega o fluxo ANTES de comparar com o custo, ou exige que cada unidade feche sozinha (`all(...)`, máximo das datas individuais)? |
+| `data_zero_unica` | ⚠ CONVENÇÃO: fluxos de unidades compradas em datas diferentes alinhados numa data zero comum (TIR, duration, correção) | Ver de onde o código conta o tempo de cada fluxo. **Sempre `Decisão sua`**: mostrar as duas leituras com o exemplo pequeno e o que cada uma dá |
+| `valor_teorico_como_desembolso` | Valor teórico ou auxiliar (criado para definir desconto, piso ou cenário) entrando como custo real no breakeven, no MOIC ou na TIR | Para cada parcela do custo, perguntar: isso saiu do caixa? Procurar no `MEMORIA.md` e nos rótulos palavras como teórico, mínimo, cenário, referência |
+| `derivacao_opaca` | Número derivado de outro por um fator, extrapolação ou regra que não está escrita em lugar nenhum | Reescrever a derivação passo a passo; constante sem rótulo nem origem, ou passo que não se reconstrói, é `Opaco` (ou `Erro`, se a reconstrução mostrar conta errada) |
+| `chave_casa_no_banco_nao_no_codigo` | Duas tabelas juntadas por um código que o banco casa (collation sem diferença de maiúsculas, espaço) e o dicionário do Python não: o lançamento cai em "sem dono" e some da conta | Contar os códigos de uma tabela que não acham par na outra pelo dicionário e repetir com `upper()`/`strip()`: se o número cair, a junção perde linha |
+| `valor_nominal_em_data_passada` | Coluna rotulada "em R$ da data-base" que só traz para a data-base o que está DEPOIS dela; o saldo parado numa data anterior fica nominal | Para cada valor "na data-base", ver se o código corrige nos dois sentidos (data do evento antes e depois da data-base) |
+| `rotulo_contradiz_calculo` | O rótulo descreve uma regra que o cálculo não faz ("sem juros" num parcelado corrigido pela mezz) | Ler cada rótulo e premissa da planilha contra a fórmula do código que preenche a coluna |
+| `periodo_incompleto_como_fechado` | Média, projeção ou ajuste que trata como "mês fechado" todo mês anterior a hoje, inclusive mês que ainda não recebeu dado: o mês vazio entra como valor baixo e puxa a média | Ver como a fórmula decide o período fechado (`TODAY()`, data de hoje no código); comparar com a última data que existe na base. Mês com zero lançamentos, ou só com parcelas antigas, dentro da janela é o sinal |
+| `limite_de_mes_por_dias` | "Mês seguinte" testado por uma janela de dias (`m - 31 dias >= data-base`), que falha quando a data-base cai no fim do mês | Procurar comparações de mês feitas com `timedelta(days=...)`; testar com a data-base no último dia do mês |

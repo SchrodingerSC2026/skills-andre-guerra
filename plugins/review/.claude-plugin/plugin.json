@@ -1,0 +1,7 @@
+{
+  "name": "review",
+  "description": "Revisões de entregável financeiro: /review:all (as três juntas), financial, premises, narrative e go (revisa e corrige sozinho). Instalação e atualização: README da loja.",
+  "author": {
+    "name": "André Guerra"
+  }
+}
