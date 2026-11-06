@@ -41,7 +41,7 @@ medição. Citação ambígua do alvo ainda se pergunta (é a única pergunta pe
 
 | Item | Faz |
 |---|---|
-| `Erro` (financeira) conferido e medido, os dois caminhos batendo | corrige |
+| `Erro` (financeira) conferido e medido, os dois caminhos batendo | corrige, salvo o `Erro` de código contra decisão, que segue a linha do conflito `Código contra decisão` abaixo |
 | `Número`, `Universo`, `Narrativa` (narrativa) conferidos, sem `estimativa` | corrige |
 | Conflito de premissa (`Valores diferentes`, `Código contra decisão`, `Texto contra cálculo`) | corrige **só se o usuário decidiu o lado nesta mesma sessão**; senão, lista |
 | `Decisão sua`, `Método`, convenção financeira | aplica **só decisão do usuário tomada nesta mesma sessão**; senão, lista |

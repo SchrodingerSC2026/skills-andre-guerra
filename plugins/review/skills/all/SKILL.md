@@ -51,6 +51,22 @@ bate sai). Depois, a seção 4 da `RV\financial` (medir os itens `Erro` por dois
 principal) e o complemento de lugares da seção 3 da `RV\premises` (busca própria pelo valor em todas as
 grafias). Medir não se delega.
 
+## 4b. Tirar da lista o que já foi respondido
+
+Antes de montar o relatório, cruzar cada item que pede resposta (`Erro`, `Precisa de prova`, `Opaco`,
+`Decisão sua`, os conflitos e os achados `Método`) com as decisões registradas no projeto: o arquivo de
+pendências (inclusive as respostas de uma revisão anterior, item a item), a memória e o `CLAUDE.md`.
+
+| O que se acha | Vai para |
+|---|---|
+| a nota decidiu e o código, a planilha ou o texto seguem a nota | linha `Já decidido`, com a nota e a data; não é item a responder |
+| a nota decidiu e o código, a planilha ou o texto fazem outra coisa | item `Erro` (código contra decisão), com os dois trechos: é falha de execução |
+| duas notas divergem e a mais nova revoga a velha em palavras | linha `Nota desatualizada`, para atualizar a nota; não é pergunta |
+| nenhuma nota decidiu | segue como item |
+
+Abrir a nota citada e conferir a data e o texto antes de mover o item. Dizer no topo quantos itens
+saíram por já estarem decididos, para o usuário ver que o filtro rodou.
+
 ## 5. Um relatório, três blocos
 
 Conclusão primeiro (quantos itens por veredito em cada bloco, e a revisão que ficou de fora, se houver).
@@ -68,7 +84,8 @@ Depois, no formato numerado da `RV\financial`:
   3.1.1  [Gravidade] ...
 ```
 
-Cada bloco segue o detalhe da skill de origem (campos de cada item, `Certo` juntos numa linha cada, o
+Cada bloco segue o detalhe da skill de origem (campos de cada item, `Certo` e `Já decidido` juntos numa
+linha cada, o
 inventário de premissas também no `.md` da pasta das planilhas). Item que aparece em duas revisões (a
 mesma taxa achada como `Erro` na financeira e como `Valores diferentes` nas premissas) sai **uma vez**,
 no bloco que tem a prova mais forte, com "também em 2.x.y" no outro. Fechar dizendo que o usuário responde

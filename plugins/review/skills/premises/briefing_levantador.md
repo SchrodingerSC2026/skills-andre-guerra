@@ -31,13 +31,17 @@ Não rode os geradores. Não grave nada no projeto. Conta de conferência, se pr
    - `SEM FONTE`: premissa que muda resultado e não tem decisão, medição nem documento.
    Cada conflito traz os dois lados (arquivo:linha e trecho literal de cada um), a data de cada lado quando houver, e
    qual lado parece vigente pela data da decisão. Não decida qual está certo: isso é de quem lê.
+   ⛔ Quando os dois lados são **notas** e a mais nova revoga a mais velha em palavras, e o código segue a mais nova,
+   não é conflito: vai para uma lista à parte, **Notas desatualizadas** (a nota velha, a nova e as datas), que é
+   manutenção de nota e não pergunta a quem lê. Se o código segue a nota velha, é `CÓDIGO CONTRA DECISÃO`.
 3. **Bloco JSON**, um só, no fim:
 ```json
 {"inventario": [{"premissa": "...", "valor": "...", "onde": ["arquivo:linha `trecho`"], "atua_em": "...",
                  "fonte": "DECISÃO 01/11/2026 (MEMORIA.md:7)"}],
  "conflitos": [{"id": 1, "tipo": "CÓDIGO CONTRA DECISÃO", "resumo": "...",
                 "lados": [{"onde": "arquivo:linha", "trecho": "...", "data": "dd/mm/aaaa ou null"}],
-                "vigente_pela_data": "..."}]}
+                "vigente_pela_data": "..."}],
+ "notas_desatualizadas": [{"velha": "arquivo:linha `trecho` (data)", "nova": "arquivo:linha `trecho` (data)"}]}
 ```
 
 **Escrita:** as convenções do ambiente (preenchidas por quem envia este briefing: idioma, moeda, data); o que não der para saber sai `INDETERMINADO`.

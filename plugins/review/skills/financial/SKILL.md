@@ -48,7 +48,10 @@ inteiro. Nada sobre o que se espera achar.
 
 Para cada item: abrir o `arquivo:linha` ou a `Aba!Célula` citados e conferir que o trecho literal
 está lá e diz o que o item afirma. Item sem onde e trecho, ou com trecho que não bate, é
-**descartado**. Convenção marcada como `Erro` vira `Decisão sua`.
+**descartado**. Convenção marcada como `Erro` vira `Decisão sua`. `Decisão sua` cuja escolha já está
+registrada nas notas do projeto (arquivo de pendências, memória, `CLAUDE.md`), com o código seguindo
+a nota, vira `Já decidido`; com o código fazendo outra coisa, vira `Erro` (código contra decisão).
+Conferir a nota e a data, nos dois casos.
 
 ## 4. Medir os itens Erro (só eles)
 
@@ -65,12 +68,17 @@ No chat:
 ```
 1  <planilha>
  1.1  <etapa: recebimentos, custo, unidade/breakeven, relógio, derivação>
-  1.1.1  [Veredito] uma linha
+  1.1.1  [Veredito] uma linha do que está em jogo
+         O que é: a premissa em linguagem de negócio e o que ela faz no resultado
+         O problema: o que a conta faz e o que deveria fazer, sem nome de função
+         Exemplo: caso pequeno com conta à mão, ou o caso real medido
+         Quanto pesa: efeito medido (2 caminhos), ou "não medido"
+         Para decidir: as saídas possíveis e a recomendada (só em `Decisão sua` e `Precisa de prova`)
          Onde: arquivo:linha ou Aba!Célula, coluna com letra, campo de origem
-         Prova: exemplo pequeno | efeito medido (2 caminhos) | derivação
 ```
 
-Os itens `Certo` vão juntos, numa linha cada, para se ver o que foi conferido. Fechar dizendo que
+Os itens `Certo` vão juntos, numa linha cada, para se ver o que foi conferido. Os `Já decidido`
+também, numa linha cada, com a nota e a data, e **não** contam como item a responder. Fechar dizendo que
 o usuário responde item a item ("1.1.1 corrige; 1.3.1 quero a prova") e que o que não tocar fica
 como está. Seguir as convenções de escrita que o ambiente declarar (idioma, moeda, data, coluna com
 letra).

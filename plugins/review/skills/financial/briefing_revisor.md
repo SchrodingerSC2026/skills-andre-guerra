@@ -41,8 +41,14 @@ Mais todas as armadilhas do catálogo.
   ou compostos, CDI futuro, ordem de abatimento) e todo caso com duas leituras defensáveis.
   ⛔ Convenção **nunca** é `Erro`, mesmo que a prática de mercado seja outra: mostre as leituras e
   o que cada uma dá.
+- `Já decidido`: a escolha (convenção ou caso de duas leituras) **já está registrada nas notas do
+  projeto**, com data, e o código faz o que a nota diz. Cite a nota (arquivo:linha e data) em uma
+  linha e não monte exemplo nem peça decisão de novo. Se o código **não** faz o que a nota decidiu,
+  o item não é `Já decidido`: é `Erro` (código contra decisão), com os dois trechos.
+  Antes de marcar `Decisão sua`, procure a escolha nas notas: só é `Decisão sua` o que nenhuma nota
+  decidiu.
 
-**Prova:** todo item que não for `Certo` leva um **exemplo pequeno com conta à mão** (2 ou 3
+**Prova:** todo item que não for `Certo` nem `Já decidido` leva um **exemplo pequeno com conta à mão** (2 ou 3
 casos, valores redondos, em R$) mostrando onde as leituras divergem. Em `Erro`, diga também o
 efeito na própria planilha se der para calcular pela base (antes x depois).
 
@@ -52,11 +58,15 @@ literal, mais a coluna com a letra e o campo de origem. Item sem isso será desc
 **Escrita:** as convenções do ambiente (preenchidas por quem envia este briefing: idioma, moeda, data); taxa sempre com os dois números
 que a formam; o que não der para saber sai `INDETERMINADO`.
 
-**Resposta:** os itens numerados (`1` a planilha, `1.1` a etapa do cálculo, `1.1.1` o item) e, no
-fim, um único bloco JSON com a lista de itens:
+**Resposta:** os itens numerados (`1` a planilha, `1.1` a etapa do cálculo, `1.1.1` o item). Cada
+item que não for `Certo` nem `Já decidido` traz, em linguagem de negócio: **o que é** (a premissa e o
+que ela faz no resultado), **o problema**, o **exemplo** pequeno, **quanto pesa** (medido na base, ou
+"não medido") e, em `Decisão sua`, **as saídas possíveis**. No fim, um único bloco JSON com a lista de
+itens:
 
 ```json
 [{"id": "1.1.1", "entregavel": "...", "etapa": "...", "veredito": "Erro",
-  "armadilha": "<chave do catálogo ou null>", "resumo": "...", "onde": "...", "prova": "..."}]
+  "armadilha": "<chave do catálogo ou null>", "resumo": "...", "onde": "...", "prova": "...",
+  "decisao_registrada": "<arquivo:linha e data da nota, ou null>"}]
 ```
 Inclua também os itens `Certo` das métricas de decisão, para se ver o que foi conferido.
