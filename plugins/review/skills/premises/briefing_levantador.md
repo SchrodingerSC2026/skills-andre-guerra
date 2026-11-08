@@ -28,7 +28,10 @@ Não rode os geradores. Não grave nada no projeto. Conta de conferência, se pr
    - `MESMA PREMISSA, VALORES DIFERENTES`: dois lugares assumem valores diferentes para a mesma coisa;
    - `CÓDIGO CONTRA DECISÃO`: o código faz uma coisa e uma nota registra outra decisão;
    - `TEXTO CONTRA CÁLCULO`: uma aba de premissas ou um rótulo descreve uma conta diferente da feita;
-   - `SEM FONTE`: premissa que muda resultado e não tem decisão, medição nem documento.
+   - `SEM FONTE`: premissa que muda resultado e não tem decisão, medição nem documento;
+   - `BASE DIFERENTE ENTRE PARTES`: duas partes que o material apresenta como a mesma conta (o mecanismo
+     central e a sua aplicação em outro canal, prazo ou cenário) partem de grandezas diferentes, como uma
+     da oferta de cada período e a outra do piso ou do máximo. Mostre a base de cada uma (arquivo:linha).
    Cada conflito traz os dois lados (arquivo:linha e trecho literal de cada um), a data de cada lado quando houver, e
    qual lado parece vigente pela data da decisão. Não decida qual está certo: isso é de quem lê.
    ⛔ Quando os dois lados são **notas** e a mais nova revoga a mais velha em palavras, e o código segue a mais nova,
@@ -38,7 +41,7 @@ Não rode os geradores. Não grave nada no projeto. Conta de conferência, se pr
 ```json
 {"inventario": [{"premissa": "...", "valor": "...", "onde": ["arquivo:linha `trecho`"], "atua_em": "...",
                  "fonte": "DECISÃO 01/11/2026 (MEMORIA.md:7)"}],
- "conflitos": [{"id": 1, "tipo": "CÓDIGO CONTRA DECISÃO", "resumo": "...",
+ "conflitos": [{"id": 1, "tipo": "CÓDIGO CONTRA DECISÃO ou BASE DIFERENTE ENTRE PARTES etc.", "resumo": "...",
                 "lados": [{"onde": "arquivo:linha", "trecho": "...", "data": "dd/mm/aaaa ou null"}],
                 "vigente_pela_data": "..."}],
  "notas_desatualizadas": [{"velha": "arquivo:linha `trecho` (data)", "nova": "arquivo:linha `trecho` (data)"}]}

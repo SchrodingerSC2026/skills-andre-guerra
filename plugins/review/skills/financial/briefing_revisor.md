@@ -23,12 +23,17 @@ script seu numa pasta temporária, lendo a base só para leitura.
 recebimento, custo e equivalentes) e toda a cadeia que as alimenta, subindo até o campo na tabela
 de origem. Coluna sempre citada com a letra: `MOIC` (coluna D).
 
-**Em cada premissa da cadeia, as cinco perguntas:**
+**Em cada premissa da cadeia, as seis perguntas:**
 1. O que este número representa de fato? O campo lido bate com o rótulo (bruto x líquido, universo)?
 2. Foi caixa de verdade, ou é valor teórico/auxiliar?
 3. A unidade de análise é a certa? (caso, acordo, carteira, portfólio; a sobra de um paga o outro?)
 4. Quando começa o relógio de cada fluxo? (data zero da TIR, da duration, da correção)
 5. Como foi derivado? Reescreva a derivação passo a passo; o que não se reconstrói é Opaco.
+6. Esta parte segue o mecanismo do resto? Quando o material tem um mecanismo central (a oferta muda por
+   período, por degrau ou por cenário) e outra parte aplica "a mesma conta" em outro lugar (outro canal,
+   outro prazo, outra carteira), a base dela tem de ser a saída do mecanismo, período a período. Base
+   diferente (o piso, o máximo, um valor fixo que não se move enquanto o mecanismo se move) é `Erro` de
+   universo, salvo nota que decida; meça as duas no mesmo universo, lado a lado.
 Mais todas as armadilhas do catálogo.
 
 **Vereditos, com esta grafia exata:**

@@ -36,6 +36,12 @@ O arquivo de saída tem estas seções, escritas NESTA ORDEM, cada uma antes de 
    `nunca desfeita`, e quantos parágrafos o leitor passou acreditando nela. Conclusão `nunca desfeita` é
    a mais grave: o leitor sai do documento com ela.
 3. **Desconexões entre os dois**: tabela com tema, o que diz cada um (trecho e página) e por que importa.
+   Inclua sempre a **coerência do mecanismo**: quando o documento descreve um mecanismo central (a oferta que
+   muda por período, por degrau ou por cenário) e outra parte diz aplicar a mesma conta em outro lugar (outro
+   canal, outro prazo), confira na planilha que essa parte muda junto, período a período e no mesmo universo.
+   Número que fica parado enquanto o mecanismo se move, ou que parte de outra base (o piso, o máximo), é
+   `Universo` de gravidade alta. E toda comparação do texto ("mais alto", "mais barato") se mede também contra
+   o que o leitor vai comparar (a oferta vizinha no mesmo período), não só contra a base que o texto escolheu.
 4. **O que as planilhas mostram**: para cada número de decisão, arquivo, aba, coluna com letra e a conta
    que o reproduz. Reproduza SEMPRE com a definição que o documento declara (se o texto diz "renegociado =
    coluna X preenchida", use a coluna X); outra definição só como métrica adicional, com outro nome.

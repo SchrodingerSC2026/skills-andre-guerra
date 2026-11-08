@@ -1,7 +1,7 @@
 # Catálogo de armadilhas da /review:financial
 
 Cada linha é um erro de raciocínio financeiro que já aconteceu. O revisor procura todas em toda
-revisão, além das cinco perguntas. Linha nova entra quando o usuário confirma um Erro ("corrige" ou
+revisão, além das seis perguntas. Linha nova entra quando o usuário confirma um Erro ("corrige" ou
 "é erro"): chave, armadilha e como detectar, sem nome de projeto, planilha ou valor. O catálogo registra **como detectar**,
 nunca qual convenção é a certa.
 
@@ -16,4 +16,5 @@ nunca qual convenção é a certa.
 | `valor_nominal_em_data_passada` | Coluna rotulada "em R$ da data-base" que só traz para a data-base o que está DEPOIS dela; o saldo parado numa data anterior fica nominal | Para cada valor "na data-base", ver se o código corrige nos dois sentidos (data do evento antes e depois da data-base) |
 | `rotulo_contradiz_calculo` | O rótulo descreve uma regra que o cálculo não faz ("sem juros" num parcelado corrigido pela mezz) | Ler cada rótulo e premissa da planilha contra a fórmula do código que preenche a coluna |
 | `periodo_incompleto_como_fechado` | Média, projeção ou ajuste que trata como "mês fechado" todo mês anterior a hoje, inclusive mês que ainda não recebeu dado: o mês vazio entra como valor baixo e puxa a média | Ver como a fórmula decide o período fechado (`TODAY()`, data de hoje no código); comparar com a última data que existe na base. Mês com zero lançamentos, ou só com parcelas antigas, dentro da janela é o sinal |
+| `parte_derivada_com_outra_base` | Uma parte que se apresenta como "a mesma conta" do mecanismo central em outro lugar (outro canal de venda, outro prazo, outro cenário) calculada sobre outra base: o piso ou o máximo, em vez da saída do mecanismo em cada período | Achar no código a base de cada parte derivada e comparar com a do mecanismo central: se o central tem períodos, degraus ou cenários, a derivada tem os mesmos ou uma nota dizendo por que não. Pôr as duas lado a lado no mesmo universo e período: a derivada parada enquanto a central desce, ou acima dela num período e abaixo no outro, é o sinal |
 | `limite_de_mes_por_dias` | "Mês seguinte" testado por uma janela de dias (`m - 31 dias >= data-base`), que falha quando a data-base cai no fim do mês | Procurar comparações de mês feitas com `timedelta(days=...)`; testar com a data-base no último dia do mês |
