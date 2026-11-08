@@ -42,7 +42,7 @@ medição. Citação ambígua do alvo ainda se pergunta (é a única pergunta pe
 | Item | Faz |
 |---|---|
 | `Erro` (financeira) conferido e medido, os dois caminhos batendo | corrige, salvo o `Erro` de código contra decisão, que segue a linha do conflito `Código contra decisão` abaixo |
-| `Número`, `Universo`, `Narrativa` (narrativa) conferidos, sem `estimativa` | corrige |
+| `Número`, `Universo`, `Narrativa`, `Leitura` (narrativa) conferidos, sem `estimativa` | corrige; o `Leitura` se corrige no § que induz a conclusão errada (definir o termo ali ou trazer a definição para antes dele), não só no que a desfaz |
 | Conflito de premissa (`Valores diferentes`, `Código contra decisão`, `Texto contra cálculo`) | corrige **só se o usuário decidiu o lado nesta mesma sessão**; senão, lista |
 | `Decisão sua`, `Método`, convenção financeira | aplica **só decisão do usuário tomada nesta mesma sessão**; senão, lista |
 | `Já decidido` por decisão registrada em sessão anterior | **não aplica** (o usuário pode não lembrar dela); lista, citando a decisão e a data |
@@ -76,7 +76,9 @@ raiz, e gravar ali um `manifesto.csv` (arquivo, sha256 antes, sha256 depois, ite
 ## 5. Reconferir uma vez
 
 Um agente `general-purpose` novo recebe o briefing da revisão de origem restrito **aos itens
-corrigidos**, sobre os arquivos já regerados. O que ainda aparecer volta como "não resolvido" (não há
+corrigidos**, sobre os arquivos já regerados. Se algum item `Leitura` foi corrigido, a releitura parágrafo a parágrafo
+vai do começo do documento até o § que desfazia a conclusão, porque mexer num parágrafo pode plantar uma
+conclusão errada nova nos seguintes. O que ainda aparecer volta como "não resolvido" (não há
 segunda rodada de correção). Conferir o que ele devolver como na seção 3 de cada skill.
 
 ## 6. Relatório (a única coisa que o usuário lê)

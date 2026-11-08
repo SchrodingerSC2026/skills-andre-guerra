@@ -86,7 +86,9 @@ Depois, no formato numerado da `RV\financial`:
 
 Cada bloco segue o detalhe da skill de origem (campos de cada item, `Certo` e `Já decidido` juntos numa
 linha cada, o
-inventário de premissas também no `.md` da pasta das planilhas). Item que aparece em duas revisões (a
+inventário de premissas também no `.md` da pasta das planilhas; no bloco 3, o Registro de leitura de cada
+documento, uma linha por conclusão errada com o § que a induz e o § que a desfaz ou `nunca desfeita`,
+antes dos itens). Item que aparece em duas revisões (a
 mesma taxa achada como `Erro` na financeira e como `Valores diferentes` nas premissas) sai **uma vez**,
 no bloco que tem a prova mais forte, com "também em 2.x.y" no outro. Fechar dizendo que o usuário responde
 item a item ("1.1.1 corrige; 3.2.1 mantém") e que o que não tocar fica como está. Sem rodada de
