@@ -67,7 +67,7 @@ No chat:
 
 ```
 1  <planilha>
- 1.1  <etapa: recebimentos, custo, unidade/breakeven, relógio, derivação>
+ 1.1  <etapa: recebimentos, custo, unidade/breakeven, relógio, derivação, taxa medida x aplicada>
   1.1.1  [Veredito] uma linha do que está em jogo
          O que é: a premissa em linguagem de negócio e o que ela faz no resultado
          O problema: o que a conta faz e o que deveria fazer, sem nome de função

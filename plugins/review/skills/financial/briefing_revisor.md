@@ -23,7 +23,7 @@ script seu numa pasta temporária, lendo a base só para leitura.
 recebimento, custo e equivalentes) e toda a cadeia que as alimenta, subindo até o campo na tabela
 de origem. Coluna sempre citada com a letra: `MOIC` (coluna D).
 
-**Em cada premissa da cadeia, as seis perguntas:**
+**Em cada premissa da cadeia, as sete perguntas:**
 1. O que este número representa de fato? O campo lido bate com o rótulo (bruto x líquido, universo)?
 2. Foi caixa de verdade, ou é valor teórico/auxiliar?
 3. A unidade de análise é a certa? (caso, acordo, carteira, portfólio; a sobra de um paga o outro?)
@@ -34,6 +34,12 @@ de origem. Coluna sempre citada com a letra: `MOIC` (coluna D).
    outro prazo, outra carteira), a base dela tem de ser a saída do mecanismo, período a período. Base
    diferente (o piso, o máximo, um valor fixo que não se move enquanto o mecanismo se move) é `Erro` de
    universo, salvo nota que decida; meça as duas no mesmo universo, lado a lado.
+7. A taxa foi medida na mesma base em que é aplicada? Toda taxa tirada de um histórico (adesão, ritmo,
+   recuperação, quebra, inadimplência) e aplicada a um estoque: compare, campo a campo, o peso e o
+   universo do numerador e do denominador da medição com os do estoque que recebe a taxa. Se as notas
+   corrigem um campo do estoque (valor corrigido, escala trocada, carteira refeita), a mesma correção
+   tem de valer na medição, ou uma nota dizer por que não. Peso ou universo diferente sem nota é `Erro`
+   de universo: meça a taxa nas duas bases, lado a lado, e diga quanto muda o resultado.
 Mais todas as armadilhas do catálogo.
 
 **Vereditos, com esta grafia exata:**
