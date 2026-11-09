@@ -12,6 +12,7 @@ como `CLAUDE.md`, `MEMORIA.md` e `LEIA-ME`) e tira de lá o que vale.
 | `/review:financial <planilha>` | revisa a lógica financeira de uma planilha (TIR, MOIC, recebimento, custo) |
 | `/review:premises <planilhas>` | levanta as premissas e aponta as que se contradizem ou não têm fonte |
 | `/review:narrative` | revisa e-mail, PDF e planilhas como o leitor lê, do número final de volta à base |
+| `/review:zip <pacotes>` | um agente por pacote lê como o destinatário (dev, outro sistema) e diz o que entendeu e o que faria; compara com o que o pacote precisava transmitir |
 | `/review:go <alvo>` | revisa e **corrige sozinho** o que for defeito comprovado; devolve só o relatório das alterações |
 
 Pedir a revisão (digitando o comando ou em palavras) já autoriza os agentes dela. Nenhuma dispara
